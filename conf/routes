@@ -1,0 +1,11 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+
+# ~~~~
+OPTIONS /           controllers.RootController.rootOptions
+OPTIONS /*url       controllers.RootController.options(url: String)
+
+GET     /version    controllers.RootController.version
+
+# Resources
+GET     /assets/*file       controllers.Assets.at(path="/public", file)
