@@ -13,8 +13,8 @@
         <appender-ref ref="STDOUT"/>
     </root>
 
-    <logger name="services.epassport.nec" level="DEBUG"/>
-    <logger name="services.facial.nec" level="DEBUG"/>
+    <logger name="controllers" level="DEBUG"/>
+    <logger name="services" level="DEBUG"/>
     <!--- END CONSOLE -->
 
 </configuration>
