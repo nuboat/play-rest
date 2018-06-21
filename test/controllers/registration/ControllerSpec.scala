@@ -33,7 +33,7 @@ class ControllerSpec extends UnitSpec with LazyLogging {
       logger.info(contentAsString(res))
     }
 
-    "return 400 with right json post" in {
+    "return 400 when wrong json post" in {
 
       val res = route(app, FakeRequest(R1._1, R1._2)
         .withHeaders(
