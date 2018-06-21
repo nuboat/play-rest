@@ -2,13 +2,14 @@ package controllers
 
 import javax.inject.{Inject, Singleton}
 import play.api.mvc.{AbstractController, Action, AnyContent, ControllerComponents}
-import play.libs.Json
+import services.Json
 
 /**
   * @author Peerapat A on Jun 19, 2018
   */
 @Singleton
-class RootController @Inject()(cc: ControllerComponents)
+class RootController @Inject()(cc: ControllerComponents
+                               , json: Json)
   extends AbstractController(cc) {
 
   def rootOptions: Action[AnyContent] = options("/")
@@ -18,7 +19,7 @@ class RootController @Inject()(cc: ControllerComponents)
   }
 
   def version() = Action {
-    Ok(Json.mapper.writeValueAsString(ApiVersion("1.0.0")))
+    Ok(json.toText(ApiVersion("1.0.0")))
   }
 
   case class ApiVersion(version: String)

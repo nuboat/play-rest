@@ -7,5 +7,7 @@ OPTIONS /*url       controllers.RootController.options(url: String)
 
 GET     /version    controllers.RootController.version
 
+POST    /registration    controllers.registration.Controller.post
+
 # Resources
 GET     /assets/*file       controllers.Assets.at(path="/public", file)
