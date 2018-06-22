@@ -28,7 +28,6 @@ libraryDependencies ++= Seq(
   "com.h2database" % "h2" % "1.4.194" % Test
   , "com.jolbox" % "bonecp" % "0.8.0.RELEASE" % Test
   , "org.scalatestplus.play" %% "scalatestplus-play" % "3.1.1" % Test
-  , "com.jarunj.xml" % "xml-compare" % "0.7.2" % Test
 )
 
 import com.typesafe.sbt.packager.universal.ZipHelper
