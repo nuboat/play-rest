@@ -2,24 +2,25 @@ package persists
 
 import abstractspec.UnitSpec
 import entites.Customer
+import persists.CustomerStatement._
 
 class CustomerSQLSpec extends UnitSpec {
 
   "Like name" should {
     "return List[Customer]" in {
-      val customers: List[Customer] =
+
+      val customers: List[Customer] = db.withConnection { implicit con =>
         """
           |SELECT * FROM CUSTOMERS
           |WHERE  name like ?
         """.stripMargin
           .setString("Miche%")
           .query[Customer]
+      }
 
-
-      assert(customers.size === 3)
+      customers.foreach(println)
     }
   }
-
 
   override val initialSQL = List(
     """

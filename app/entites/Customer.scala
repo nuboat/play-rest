@@ -1,3 +1,3 @@
 package entites
 
-case class Customer(id: Long, name: String, gender: Char)
+case class Customer(id: Long, name: String, gender: String)
